@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
-   <head>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">    
+    <head>
         <div th:replace="~{fragment :: meta}"></div>   
              
         <div th:replace="~{fragment :: styles}"></div>
-       
-       <title>SAMURAI Travel</title>	
-   </head>
-   <body>
-         <div class="samuraitravel-wrapper">
+          
+        <title>SAMURAI Travel</title>	
+    </head>
+    <body>
+        <div class="samuraitravel-wrapper">
             <!-- ヘッダー -->
             <div th:replace="~{fragment :: header}"></div>
             
@@ -22,10 +22,11 @@
                         ログアウトしました。
                     </div>
                     
-                        <div th:if="${successMessage}" class="alert alert-info">
+                    <div th:if="${successMessage}" class="alert alert-info">
                         <span th:text="${successMessage}"></span>
-                    </div>     
-                     <div class="d-flex justify-content-center">                                            
+                    </div> 
+                    
+                    <div class="d-flex justify-content-center">                                            
                         <form method="get" th:action="@{/houses}" class="mb-5 samuraitravel-search-form">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="keyword" th:value="${keyword}" placeholder="民宿名・目的地">
@@ -182,14 +183,4 @@
         
         <div th:replace="~{fragment :: scripts}"></div>  
   </body>
-</html>
-                </div>
-            </main>
-            
-            <!-- フッター -->
-            <div th:replace="~{fragment :: footer}"></div>
-        </div>    
-        
-        <div th:replace="~{fragment :: scripts}"></div>  
-	</body>
-</html>
+</html>  
